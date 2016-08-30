@@ -1,0 +1,45 @@
+<div data-ui-view>
+    <section class="section section-learn-these-tools">
+        <div class="container">
+            <div class="title-subtitle-block">
+                <h2 class="title">Learn these deployment platfroms for apps</h2>
+                <p class="subtitle">
+                    <i>Heroku Amazon EC-2 and Docker </i>
+                </p>
+            </div>
+            <!-- title-subtitle-block -->
+        
+      <div class="lessons-categories-holder">
+        <div class="row">
+          <div
+            ng-repeat="app in applicationData  | filter : { technologytype : 'web' } track by $index">
+
+            <a href="#/all/{{app._id}}">
+              <div class="col-sm-6 col-md-4 item">
+
+                <div class="logo-holder">
+                  <img alt="{{app._id}}" class="tech-logo"
+                    src="img/{{app.logo}}.png" />
+                </div>
+
+                <h3 class="title">{{app.technologyname}}</h3>
+
+                <div class="info-line">
+                  <small class="folder"><i class="icon-folder-open-alt"></i>
+                    <span class="underline">247 lessons</span></small>
+                </div>
+                <!-- info-line -->
+              </div> <!-- item -->
+            </a>
+
+          </div>
+
+
+        </div>
+        <!-- lessons-categories-holder -->
+      </div>
+      <!-- container -->
+  </section>
+  <!-- section-learn-these-tools -->
+
+</div>

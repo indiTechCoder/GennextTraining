@@ -1,0 +1,43 @@
+[  
+   {  
+      "ID":"VKtlG5Ke320",
+      "DurationInSeconds":10000,
+      "Title":"Node JS top to Bottom",
+      "Technology" : "Angular",
+      "Link" : "youtube.com",
+      "Language" : "youtube.com",
+      "ShortDescription":"Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.",
+      "Description":"<p>MongoDB and Node.js are often used together because of their shared use of JavaScript and its object notation (JSON). JSON is quickly becoming the standard data format for web APIs and, as such, these two technologies are growing in popularity. Mongoose is an object data modeling (ODM) library that provides a rigorous modeling environment for your data, enforcing structure as needed while still maintaining the flexibility that makes MongoDB powerful.</p>",
+      "Thumbnails":[  
+         {  
+            "FullURL":"https://s3-eu-west-1.amazonaws.com/ubmas-bucket/tmp/main-Nodejsss.jpg"
+         },
+         {  
+            "FullURL":"https://s3-eu-west-1.amazonaws.com/ubmas-bucket/tmp/main-Nodejsss.jpg"
+         }
+      ],
+      "WelcomeVideoId":"PLIGDNOJWiL18FF0_8WHcpb3zY__eIW0G7"
+   },
+    {  
+       "ID":"uWIQ_6WgUNM",
+       "DurationInSeconds":8587,
+       "Title":"React JS Training series with ES5",
+       "Technology" : "React JS",
+       "Link" : "youtube.com",
+       "Language" : "React JS",
+       "ShortDescription":"React is a library developed by Facebook, and it is designed to build large applications with data that changes over time. Developers can use ReactJS to create user interfaces (UI) with high performance, where React would automatically manage all UI updates. React is all about building reusable web components, and it also renders on the server using Node.js. Learn ReactJS through online Learning Center, where you can find tutorials, v_ideos, gu_ides, and ReactJS tips & tricks from experienced ReactJS developers.",
+       "Description":"<p>React.js is a JavaScript Library developed by Facebook that functions as the V in an MVC. Known for its fast performance with a Virtual DOM, React.js is especially _ideal for building mobile sites. What's more, since you can run React.js on the server, it's more SEO-friendly than other JavaScript Frameworks available. If you don't know JavaScript yet, you should probably start out with learning JavaScript.<br/>To get a taste of how React works beyond a simple HelloWorld app, Facebook's official tutorial will teach you how to build your own realtime comment box with React. Once you have a feel for the library, you can go deeper and read the gu_ides on how to build interactive and dynamic UI, form components, and more.<br/>If you're building a website that deals with dynamic data, it is highly recommended you follow the Flux architectural design, which promotes a single directional dataflow. When React is used with Flux, it brings you the functionality of an MVC. However, according to Facebook, current MVCs don't scale well with building additional features to a large codebase, so React + Flux was their solution.</p>",
+       "Thumbnails":[  
+         {  
+            "FullURL":"https://s3-eu-west-1.amazonaws.com/ubmas-bucket/tmp/Main-ReactJSES5js.jpg"
+         },
+         {  
+            "FullURL":"https://s3-eu-west-1.amazonaws.com/ubmas-bucket/tmp/Main-ReactJSES5js.jpg"
+         }
+      ],
+      "URLs":{  
+         "www.youtube.com":"/CSS-tutorials/Building-Responsive-Single-Page-Design-PostCSS/417644-2.html"
+      },
+      "WelcomeV_ideo_id":"PLIGDNOJWiL1_ndMWBpMvo8oAXuR7bjnWM"
+   }
+ ]

@@ -1,0 +1,91 @@
+
+<header>
+    <nav role="navigation" class="navbar header-navigation-holder">
+        <div class="container">
+            <div class="navbar-header">
+                <button data-target="#header-navigation" data-toggle="collapse"
+                    class="navbar-toggle header-navigation-toggle" type="button">
+                    <i class="icon-reorder"></i>
+                </button>
+                <a href="#!/" class="navbar-brand logo"><img alt="Logo with text"
+                    class="img-responsive" src="img/logo.jpg"></a>
+            </div>
+
+            <div id="header-navigation"
+                class="collapse navbar-collapse header-navigation">
+                <ul class="nav navbar-nav header-navigation-list">
+
+                    <li class="dropdown"><a href="#" data-toggle="dropdown"
+                        class="dropdown-toggle">Learnings <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="semi-bold"><a href="#/all">All</a></li>
+                            <li><a href="#/web/angular2">Angular 2.0</a></li>
+                            <li><a href="#/web/angular">AngularJS</a></li>
+                            <li><a href="#/common/git">Git</a></li>
+                            <li><a href="#/web/js">Java script V8</a></li>
+                            <li><a href="#/web/grunt">Grunt</a></li>
+                            <li><a href="#/web/js">JavaScript</a></li>
+                            <li><a href="#/java/java8">Java</a></li>
+                            <li><a href="#/web/node">Node.js</a></li>
+                            <li><a href="#/java/j2ee">J2EE</a></li>
+                            <li><a href="#/mobile/android">Mobile Android</a></li>
+                            <li><a href="#/web/build">gulp/NPM/Yoman</a></li>
+
+                        </ul></li>
+                    <li class="hidden-sm"><a href="#!/training">Trainings</a></li>
+                    <li class="hidden-sm"><a href="#!/playlists">Screencast</a></li>
+                    <!-- Articles Dropdown - Hidden for small devices -->
+                    <li class="dropdown hidden-md hidden-sm"><a href="#"
+                        data-toggle="dropdown" class="dropdown-toggle">Articles <b
+                            class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="semi-bold"><a href="/articles">All</a></li>
+                            <li><a href="">An Introduction to the AngularJS
+                                    Directive </a></li>
+                            <li><a href="">New to AngularJS? Start learning here.</a></li>
+                            <li><a href="">Gentle Introduction to the React Flux
+                                    Architecture</a></li>
+                            <li><a href="">Recording a Great Coding Screencast</a></li>
+                            <li><a href="">AngularJS Core Services, Directive
+                                    Definition Object, and ui-router </a></li>
+                        </ul></li>
+
+                    <li class=""><a href="#" data-toggle="dropdown"
+                        class="dropdown-toggle">Enterprise Training <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="semi-bold"><a href="#!/all">All</a></li>
+                            <li><a href="#!/java">Java Development</a></li>
+                            <li><a href="#!/web">Web Technologies</a></li>
+                            <li><a href="#!/mobile">Mobile Application Development</a></li>
+                            <li><a href="#!/DevOps">Deployment Platforms</a></li>
+                        </ul></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right header-navigation-list">
+
+                    <li ng-if="isLoggedIn !== true"><a href="#!/login">Sign In</a>
+                    </li>
+                    <li ng-if="isLoggedIn === true" class="dropdown"><a href="#"
+                        data-toggle="dropdown" class="dropdown-toggle">{{currentUserName}}
+                            <span class="glyphicon glyphicon-user"></span> <b class="caret"></b>
+                    </a>
+                        <ul class="dropdown-menu">
+
+                            <li><a href="https://www.facebook.com/tarun.sharma.msp.engg">Training
+                            </a></li>
+                            <li><a href="">Profile</a></li>
+                            <li><a href="">settings</a></li>
+                            <li><a href="/signout">signout</a></li>
+
+                        </ul></li>
+
+
+                </ul>
+            </div>
+            <!--header-navigation-->
+        </div>
+        <!--container-fluid-->
+    </nav>
+    <!-- header-navigation-holder -->
+</header>
+

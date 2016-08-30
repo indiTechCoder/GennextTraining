@@ -1,0 +1,125 @@
+ <div data-ui-view>
+    <div>
+        <section class="hero" >
+            <div class="container">
+                <img alt="{{TrainingData.logo}}" class="hero-logo" ng-src="img/{{TrainingData.logo}}.png">s
+
+                <h1 class="title">{{TrainingData.technologyname}} Lessons</h1>
+
+                <div class="subtitle"><p>{{TrainingData.longdescription}}</p>
+
+                    <p>Just starting out? <strong></strong></p>
+                </div>
+
+                <br>
+                <a id="hero-signup" href="/pricing" class="custom-btn custom-btn-red custom-btn-primary get-pro">Free Access for learning
+                    <br> <small><i>click for YouTube Videos</i></small></a>
+
+                </div>
+                <!-- container -->
+            </section>
+
+
+
+            <section class="section section-browse-all-lessons">
+                <div class="container">
+                    <div class="title-subtitle-block">
+                        <h2 class="title">Browse all {{TrainingData.technologyname}} lessons.</h2>
+                        <p class="subtitle"><i>showing All series lessons...</i></p>
+                    </div><!-- title-subtitle-block -->
+
+
+
+
+                    <div class="browse-all-lessons-holder">
+                        <div class="tool-bar">
+                            <ul class="list-unstyled list-inline actions-list">
+
+                                <li>
+                                    <small><a class="filter-trigger active" href="#">Latest first</a></small>
+                                </li>
+                                <li>
+                                    <small><a class="filter-trigger" href="/technologies/node?order=ASC">Oldest first</a></small>
+                                </li>
+
+
+
+                            </ul>
+                            <!-- actions-list -->
+
+                            <div class="btn-group view-switchers-holder">
+                                <a id="select-list" role="tab" data-toggle="tab" class="btn btn-default btn-view-switcher active">
+                                    <i class="icon icon-list-ol"></i>
+                                </a>
+                                <a id="select-thumbs" role="tab" data-toggle="tab" class="btn btn-default btn-view-switcher">
+                                    <i class="icon icon-th"></i>
+                                </a>
+                            </div>
+                            <!-- view-switchers-holder -->
+                        </div>
+                        <!-- tool-bar -->
+
+                        <div class="tab-content view-tabs-holder">
+                            <div class="tab-pane tab-view-list active" id="lesson-list">
+                                <div class="series-lessons-holder" ">
+                                    <div class="table-responsive">
+                                        <table class="table table-condensed">
+                                            <tbody>
+                                                <tr ng-repeat="video in TrainingData.youtube track by $index" id="lesson-row-207" class="lesson-row " href="#!/all/{{TrainingData.technologyname}}/{{video._id}}">
+                                                    <td class="cell cell-pseudo-checkbox">
+                                                        <div class="pseudo-checkbox-holder">
+                                                            <input type="checkbox">
+                                                        </div>
+
+                                                    </td>
+                                                    <td class="cell cell-category-logo"><a
+                                                        href=""> <img alt="Angular"
+                                                        class="category-logo"
+                                                        src="img/{{TrainingData.logo}}.png">
+                                                    </a></td>
+                                                   
+                                                      <td class="cell cell-lesson-title">
+                                                        <h4 class="title">
+                                                          <a
+                                                            href="#!/all/{{TrainingData._id}}/{{video._id}}">{{video.description}}</a>
+
+                                                        </h4>
+                                                    </td>
+                                                    <td class="cell cell-lesson-category hidden-xs hidden-sm">
+                                                        <div class="info-line">
+                                                            <small class="folder"><i class="icon-folder-open-alt"></i>
+                                                                <a href="#!/all/{{TrainingData._id}}/{{video._id}}">{{TrainingData.technology}}</a> </small>
+                                                            </div>
+                                                        </td>
+
+                                                        <td class="cell cell-duration hidden-xs hidden-sm">
+                                                            <div class="info-line">
+                                                                <small class="duration"><i class="icon-time"></i> 2:05</small>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- tab-view-tiles -->
+
+                                    <div class="pagination-holder text-center">
+                                        <ul class="pagination pagination"><li class="prev disabled"><span>Previous</span></li> <li class="active"><span>1</span></li> <li><a rel="next" href="/technologies/node?order=desc&amp;page=2">2</a></li> <li><a href="/technologies/node?order=desc&amp;page=3">3</a></li> <li class="next"><a rel="next" href="/technologies/node?order=desc&amp;page=2">Next</a></li></ul>
+                                    </div>
+                                    <!-- pagination-holder -->
+                                </div>
+                                <!-- view-tabs-holder -->
+
+                            </div><!-- browse-all-lessons-holder -->
+
+
+
+                        </div><!-- container -->
+                    </section>
+
+                </div>
+    }
+    }

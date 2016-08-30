@@ -1,0 +1,379 @@
+
+<div class="container-fluid  ng-scope" ng-controller="parentCntl">
+    <form name="trainingForm" class="feedback-questions">
+        <div
+        class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+        <div class="col-md-12 col-sm-12 col-xs-12  override-col-margin">
+            <div
+            class="col-xs-12 col-sm-12  col-md-12 col-lg-12 override-col-margin">
+            <table style="width: 60%">
+                <tr>
+                    <td class="questionoptioncommon"><label>Training ID
+                    </label></td>
+                </tr>
+                <tr>
+                    <td><input required
+                        class="form-control override-form-control" data-toggle="tooltip"
+                        customtooltip data-placement="top" ng-model="training.id"
+                        type="text" name="id" placeholder="Id"></input></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12  override-col-margin">
+            <div
+            class="col-xs-12 col-sm-12  col-md-12 col-lg-12 override-col-margin">
+            <table style="width: 60%">
+                <tr>
+                    <td class="questionoptioncommon"><label>Technology
+                        Type </label></td>
+                    </tr>
+                    <tr>
+                        <td><select required name="technologytype"
+                            ng-model="training.technologytype"
+                            class="form-control override-form-control" data-toggle="tooltip">
+                            <option value="java">java</option>
+                            <option value="mobile">mobile</option>
+                            <option value="web">web</option>
+                            <option value="web">DevOps</option>
+                        </select></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div
+    class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+    <div class="col-md-12 col-sm-12 col-xs-12  override-col-margin">
+        <div
+        class="col-xs-12 col-sm-12  col-md-12 col-lg-12 override-col-margin">
+        <table style="width: 60%">
+            <tr>
+                <td class="questionoptioncommon"><label>Technology
+                    Name </label></td>
+                </tr>
+                <tr>
+                    <td><input type="text" data-toggle="tooltip"
+                        data-placement="top" title="Enter Technology Name"
+                        ng-model="training.technologyname" name="technologyname"
+                        id="technologyname" class="form-control "
+                        placeholder="Technology Name"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div
+    class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+    <div class="col-md-12 col-sm-12 col-xs-12  override-col-margin">
+        <div
+        class="col-xs-12 col-sm-12  col-md-12 col-lg-12 override-col-margin">
+        <table style="width: 60%">
+            <tr>
+                <td class="questionoptioncommon"><label>Logo </label></td>
+            </tr>
+            <tr>
+                <td><input type="text" data-toggle="tooltip" customtooltip
+                    data-placement="top" title="Enter logo" ng-model="training.logo"
+                    name="logo" id="logo" class="form-control " placeholder="logo"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div
+class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+<div
+class="col-xs-12 col-sm-12 col-md-12 override-col-top  override-col-margin ">
+<div
+class="col-xs-12 col-sm-12 col-md-6 override-col-top  override-col-margin ">
+<table style="width: 100%">
+    <tr>
+        <td class="questionoptioncommon"><label>New Training
+            : Short Description</label></td>
+        </tr>
+        <tr>
+            <td><textarea required class="form-control "
+                data-toggle="tooltip" customtooltip data-placement="top"
+                title="New Training : Short Description"
+                ng-model="training.shortdescription" name="shortdescription"
+                placeholder="New Training : Short Description"></textarea></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+</div>
+<div
+class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+<div
+class="col-xs-12 col-sm-12 col-md-12 override-col-top  override-col-margin ">
+<div
+class="col-xs-12 col-sm-12 col-md-6 override-col-top  override-col-margin ">
+<table style="width: 100%">
+    <tr>
+        <td class="questionoptioncommon"><label>New Training
+            : Long Description </label></td>
+        </tr>
+        <tr>
+            <td><textarea required class="form-control "
+                data-toggle="tooltip" customtooltip data-placement="top"
+                title="New Training : Long Description" name="longdescription"
+                ng-model="training.longdescription"
+                placeholder="New Training : Long Description"></textarea></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+</div>
+
+
+<div style="margin: 20px;"
+class="col-xs-12 col-sm-12 col-md-12 override-col-top  override-col-margin">
+<a href="" value="Send" ng-click="createTraining(trainingForm)"
+class="btn btn-primary btn-lg pull-left ">Submit Data</a>
+
+</div>
+</form>
+
+
+</div>
+
+
+
+
+
+<div class="container ng-scope" ng-controller="parentCntl">
+
+    <div class="panel-group" id="accordion"> <!-- accordion 1 -->
+        <div class="panel panel-primary" ng-repeat="data in applicationData">
+
+            <div class="panel-heading"> <!-- panel-heading -->
+                <h4 class="panel-title"> <!-- title 1 -->
+                    <a data-toggle="collapse" data-parent="#accordion" href="#{{data._id}}">
+                        {{data.technologyname}}
+                    </a>
+                </h4>
+            </div>
+            <!-- panel body -->
+            <div id="{{data._id}}" class="panel-collapse collapse in">
+                <div class="panel-body">
+
+                    <div class="container-fluid  ng-scope" ng-controller="parentCntl">
+                        <form name="videoform"  class="feedback-questions">
+                            <div
+                            class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+                            <div class="col-md-12 col-sm-12 col-xs-12  override-col-margin">
+                                <div
+                                class="col-xs-12 col-sm-12  col-md-12 col-lg-12 override-col-margin">
+                                <table style="width: 60%">
+                                    <tr>
+                                        <td class="questionoptioncommon"><label>Video ID </label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input required
+                                            class="form-control override-form-control" data-toggle="tooltip"
+                                            customtooltip data-placement="top" ng-model="video.id"
+                                            type="text" name="id" placeholder="Id"></input></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12  override-col-margin">
+                                <div
+                                class="col-xs-12 col-sm-12  col-md-12 col-lg-12 override-col-margin">
+                                <table style="width: 60%">
+                                    <tr>
+                                        <td class="questionoptioncommon"><label>VideoLink
+                                            Video </label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input required
+                                                class="form-control override-form-control" data-toggle="tooltip"
+                                                customtooltip data-placement="top" ng-model="video.link"
+                                                type="text" name="link" placeholder="link"></input></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                            class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+                            <div class="col-md-12 col-sm-12 col-xs-12  override-col-margin">
+                                <div
+                                class="col-xs-12 col-sm-12  col-md-12 col-lg-12 override-col-margin">
+                                <table style="width: 60%">
+                                    <tr>
+                                        <td class="questionoptioncommon"><label>Video
+                                            Description </label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" data-toggle="tooltip"
+                                                data-placement="top" title="Enter Technology Name"
+                                                ng-model="video.description" name="description"
+                                                id="description" class="form-control "
+                                                placeholder="video description"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                            class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+                            <div class="col-md-12 col-sm-12 col-xs-12  override-col-margin">
+                                <div
+                                class="col-xs-12 col-sm-12  col-md-12 col-lg-12 override-col-margin">
+                                <table style="width: 60%">
+                                    <tr>
+                                        <td class="questionoptioncommon"><label>Video
+                                            PlayListUrl </label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" data-toggle="tooltip"
+                                                data-placement="top" title="Enter Technology Name"
+                                                ng-model="video.playlisturl" name="playlisturl"
+                                                id="playlisturl" class="form-control "
+                                                placeholder="video playlisturl"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                            class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+                            <div class="col-md-12 col-sm-12 col-xs-12  override-col-margin">
+                                <div
+                                class="col-xs-12 col-sm-12  col-md-12 col-lg-12 override-col-margin">
+                                <table style="width: 60%">
+                                    <tr>
+                                        <td class="questionoptioncommon"><label>Technology
+                                            Name </label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" data-toggle="tooltip"
+                                                data-placement="top" title="Enter Technology Name"
+                                                ng-model="video.technology" name="technology" id="technology"
+                                                class="form-control " placeholder="technology Name"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div
+                            class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+                            <div class="col-md-12 col-sm-12 col-xs-12  override-col-margin">
+                                <div
+                                class="col-xs-12 col-sm-12  col-md-12 col-lg-12 override-col-margin">
+                                <table style="width: 60%">
+                                    <tr>
+                                        <td class="questionoptioncommon"><label>Logo </label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" data-toggle="tooltip" customtooltip
+                                            data-placement="top" title="Enter logo" ng-model="video.logo"
+                                            name="logo" id="logo" class="form-control " placeholder="logo"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                        class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+                        <div class="col-md-12 col-sm-12 col-xs-12  override-col-margin">
+                            <div
+                            class="col-xs-12 col-sm-12  col-md-12 col-lg-12 override-col-margin">
+                            <table style="width: 60%">
+                                <tr>
+                                    <td class="questionoptioncommon"><label>course_id </label></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" data-toggle="tooltip"
+                                        data-placement="top" title="Enter course_id"
+                                        ng-model="video.course_id" name="course_id" id="technology"
+                                        class="form-control " placeholder="course_id"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                    class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+                    <div
+                    class="col-xs-12 col-sm-12 col-md-12 override-col-top  override-col-margin ">
+                    <div
+                    class="col-xs-12 col-sm-12 col-md-6 override-col-top  override-col-margin ">
+                    <table style="width: 100%">
+                        <tr>
+                            <td class="questionoptioncommon"><label>New Video :
+                                Short Description</label></td>
+                            </tr>
+                            <tr>
+                                <td><textarea required class="form-control "
+                                    data-toggle="tooltip" customtooltip data-placement="top"
+                                    title="New video : Short Description"
+                                    ng-model="video.shortdescription" name="shortdescription"
+                                    placeholder="New video : Short Description"></textarea></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+                <div
+                class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+                <div
+                class="col-xs-12 col-sm-12 col-md-12 override-col-top  override-col-margin ">
+                <div
+                class="col-xs-12 col-sm-12 col-md-6 override-col-top  override-col-margin ">
+                <table style="width: 100%">
+                    <tr>
+                        <td class="questionoptioncommon"><label>New Video :
+                            Long Description </label></td>
+                        </tr>
+                        <tr>
+                            <td><textarea required class="form-control "
+                                data-toggle="tooltip" customtooltip data-placement="top"
+                                title="New video : Long Description" name="longdescription"
+                                ng-model="video.longdescription"
+                                placeholder="New video : Long Description"></textarea></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div style="margin: 20px;"
+            class="col-xs-12 col-sm-12 col-md-12 override-col-top  override-col-margin">
+            <a href="" value="Submit" ng-click="createVideoForTraining(videoform,data._id)" value="Send"
+            class="btn btn-primary btn-lg pull-left ">Submit Data</a>
+
+        </div>
+    </form>
+
+
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+

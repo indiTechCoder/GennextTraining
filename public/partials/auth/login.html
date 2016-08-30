@@ -1,0 +1,86 @@
+<section class="section" ng-controller="authController">
+	<div class="container">
+
+		<div class="title-subtitle-block">
+			<h2 class="title">Sign in to your account.</h2>
+		</div>
+
+		<div class="narrow-form-holder sign-form-holder">
+			<div class="colored-box grey">
+
+				<div class="social-buttons override-col-margin col-md-12"
+					style="margin-bottom: 20px;">
+					<div class="col-md-6 override-col-margin">
+
+						<a style="width: 100%" href="oauth/facebook"
+							class="btn btn custom-btn facebook custom-btn-secondary custom-btn-blue"><i
+							class="fa fa-facebook "></i> Facebook</a>
+					</div>
+
+					<div class="col-md-6 override-col-margin">
+						<a style="width: 100%" href="oauth/google"
+							class="btn btn custom-btn google custom-btn-secondary custom-btn-blue"><i
+							class="fa fa-google-plus "></i> Google</a>
+					</div>
+				</div>
+				<span class=" label label-danger">{{loginMessage}}</span>
+				<form class="form" class="row col-md-12" role="form" novalidate
+					name="loginform"
+					ng-class="{ 'submitted' : loginsubmitted === true}"
+					ng-submit="login(loginform)" accept-charset="UTF-8" id="login-nav">
+					<div style="display: none">
+						<input name="utf8" type="hidden" value="✓"><input
+							name="authenticity_token" type="hidden"
+							value="EN12IZbqR/y8LjZjenJfIUeUjE2THTyKQAtp7cEM2wI=">
+					</div>
+					<div class="form-group email optional user_email">
+						<label class="email optional control-label" for="user_email">Email</label><input
+							type="email" required ng-model="user.username" 
+							class="form-control" name="email" id="email"
+							placeholder="Email address"> <span
+							class=" label label-danger"
+							data-ng-show="loginsubmitted  && loginform.email.$error.required">Please
+							enter Email !</span> <span class=" label label-danger"
+							data-ng-show="loginsubmitted  && loginform.email.$error.email">Please
+							enter valid Email !</span>
+					</div>
+					<div class="form-group password optional user_password">
+						<label class="password optional control-label" for="user_password">Password</label>
+						<input type="password" required ng-model="user.password" 
+							class="form-control" name="password" id="password"
+							placeholder="Password"> <span class=" label label-danger"
+							data-ng-show="loginsubmitted  && loginform.password.$error.required">Please
+							enter password!!</span>
+					</div>
+					<div class="form-group">
+						<div class="checkbox custom-checkbox">
+							<label> <span class="icon-holder"> <input
+									class="optional" id="user_remember_me" name="user[remember_me]"
+									type="checkbox" value="1"> <span class="checkbox-icon"></span>
+							</span> <span class="label-text"> Remember me </span>
+							</label>
+						</div>
+					</div>
+					<div class="form-group flexbox-between">
+						<input
+							class="btn btn custom-btn custom-btn-secondary custom-btn-blue"
+							name="commit" type="submit" value="Sign In">
+
+					</div>
+					<br>
+					<div class="form-group text-center">
+						Need to create an account? <a class="underlined action"
+							href="#!/register">Sign up</a>
+					</div>
+					<div class="form-group text-center">
+						Forgot your password? <a class="underlined action"
+							href="#!/password">Recover it</a>
+					</div>
+				</form>
+			</div>
+		</div>
+
+
+
+	</div>
+</section>

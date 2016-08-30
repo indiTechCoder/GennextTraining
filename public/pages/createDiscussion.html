@@ -1,0 +1,263 @@
+
+<div class="container ng-scope" ng-controller="parentCntl">
+	<form name="trainingForm" class="feedback-questions">
+		<div
+		class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+		<div class="col-md-12 col-sm-12 col-xs-12  override-col-margin">
+			<div
+			class="col-xs-12 col-sm-12  col-md-12 col-lg-12 override-col-margin">
+			<table style="width: 60%">
+				<tr>
+					<td class="questionoptioncommon"><label>Discussion TopicName
+					</label></td>
+				</tr>
+				<tr>
+					<td><input required
+						class="form-control override-form-control" data-toggle="tooltip"
+						customtooltip data-placement="top" ng-model="training.topicName"
+						type="text" name="topicName" placeholder="topicName"></input></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div class="col-md-12 col-sm-12 col-xs-12  override-col-margin">
+			<div
+			class="col-xs-12 col-sm-12  col-md-12 col-lg-12 override-col-margin">
+			<table style="width: 60%">
+				<tr>
+					<td class="questionoptioncommon"><label>Training Technology
+					</label></td>
+				</tr>
+				<tr>
+					<td><input required
+						class="form-control override-form-control" data-toggle="tooltip"
+						customtooltip data-placement="top" ng-model="training.technology"
+						type="text" name="technology" placeholder="technology"></input></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+
+<div
+class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+<div class="col-md-12 col-sm-12 col-xs-12  override-col-margin">
+	<div
+	class="col-xs-12 col-sm-12  col-md-12 col-lg-12 override-col-margin">
+	<table style="width: 60%">
+		<tr>
+			<td class="questionoptioncommon"><label>Discussion Logo </label></td>
+		</tr>
+		<tr>
+			<td><input type="text" data-toggle="tooltip" customtooltip
+				data-placement="top" title="Enter author" ng-model="training.logo"
+				name="logo" id="logo" class="form-control " placeholder="logo"></td>
+			</tr>
+		</table>
+	</div>
+</div>
+</div>
+
+
+
+
+<div
+class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+<div
+class="col-xs-12 col-sm-12 col-md-12 override-col-top  override-col-margin ">
+<div
+class="col-xs-12 col-sm-12 col-md-6 override-col-top  override-col-margin ">
+<table style="width: 100%">
+	<tr>
+		<td class="questionoptioncommon"><label>New Discussion
+			: Short Description</label></td>
+		</tr>
+		<tr>
+			<td><textarea required class="form-control "
+				data-toggle="tooltip" customtooltip data-placement="top"
+				title="New Training : Short Description"
+				ng-model="training.shortDescription" name="shortDescription"
+				placeholder="New Training :  shortDescription"></textarea></td>
+			</tr>
+		</table>
+	</div>
+
+</div>
+</div>
+<div
+class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+<div
+class="col-xs-12 col-sm-12 col-md-12 override-col-top  override-col-margin ">
+<div
+class="col-xs-12 col-sm-12 col-md-6 override-col-top  override-col-margin ">
+<table style="width: 100%">
+	<tr>
+		<td class="questionoptioncommon"><label>New Training
+			: Long Description </label></td>
+		</tr>
+		<tr>
+			<td><textarea required class="form-control "
+				data-toggle="tooltip" customtooltip data-placement="top"
+				title="New Training : Long Description" name="longDescription"
+				ng-model="training.longDescription"
+				placeholder="New Training : longDescription"></textarea></td>
+			</tr>
+		</table>
+	</div>
+
+</div>
+</div>
+
+
+<div style="margin: 20px;"
+class="col-xs-12 col-sm-12 col-md-12 override-col-top  override-col-margin">
+<a href="" value="Send" ng-click="submitDiscussion(trainingForm)"
+class="btn btn-primary btn-lg pull-left ">Submit Data</a>
+
+</div>
+</form>
+
+
+</div>
+
+
+
+<div class="container ng-scope" ng-controller="parentCntl">
+
+	<div class="panel-group" id="accordion"> <!-- accordion 1 -->
+		<div class="panel panel-primary" ng-repeat="data in Alldiscussions">
+
+			<div class="panel-heading"> <!-- panel-heading -->
+				<h4 class="panel-title"> <!-- title 1 -->
+					<a data-toggle="collapse" data-parent="#accordion" href="#{{data._id}}">
+						{{data.topicName}}
+					</a>
+				</h4>
+			</div>
+			<!-- panel body -->
+			<div id="{{data._id}}" class="panel-collapse collapse in">
+				<div class="panel-body">
+
+					<div class="container ng-scope" >
+						<form name="VideoForm" class="feedback-questions">
+
+
+							<div class="col-md-12 col-sm-12 col-xs-12  override-col-margin">
+								<div
+								class="col-xs-12 col-sm-12  col-md-12 col-lg-12 override-col-margin">
+								<table style="width: 60%">
+									<tr>
+										<td class="questionoptioncommon"><label>Video  Technology
+										</label></td>
+									</tr>
+									<tr>
+										<td><input required
+											class="form-control override-form-control" data-toggle="tooltip"
+											customtooltip data-placement="top" ng-model="video.technology"
+											type="text" name="technology" placeholder="technology"></input></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+
+						<div
+						class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+						<div class="col-md-12 col-sm-12 col-xs-12  override-col-margin">
+							<div
+							class="col-xs-12 col-sm-12  col-md-12 col-lg-12 override-col-margin">
+							<table style="width: 60%">
+								<tr>
+									<td class="questionoptioncommon"><label>Video link
+									</label></td>
+								</tr>
+								<tr>
+									<td><input type="text" data-toggle="tooltip"
+										data-placement="top" title="Enter Technology Name"
+										ng-model="video.link" name="link"
+										id="link" class="form-control "
+										placeholder="link  "></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div
+					class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+					<div class="col-md-12 col-sm-12 col-xs-12  override-col-margin">
+						<div
+						class="col-xs-12 col-sm-12  col-md-12 col-lg-12 override-col-margin">
+						<table style="width: 60%">
+							<tr>
+								<td class="questionoptioncommon"><label>Video playlist </label></td>
+							</tr>
+							<tr>
+								<td><input type="text" data-toggle="tooltip" customtooltip
+									data-placement="top" title="Enter playlist" ng-model="video.playlist"
+									name="playlist" id="playlist" class="form-control " placeholder="playlist"></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<div
+				class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+				<div class="col-md-12 col-sm-12 col-xs-12  override-col-margin">
+					<div
+					class="col-xs-12 col-sm-12  col-md-12 col-lg-12 override-col-margin">
+					<table style="width: 60%">
+						<tr>
+							<td class="questionoptioncommon"><label>Video Name </label></td>
+						</tr>
+						<tr>
+							<td><input type="text" data-toggle="tooltip" customtooltip
+								data-placement="top" title="Enter author" ng-model="video.name"
+								name="name" id="name" class="form-control " placeholder="name"></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div
+			class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+			<div class="col-md-12 col-sm-12 col-xs-12  override-col-margin">
+				<div
+				class="col-xs-12 col-sm-12  col-md-12 col-lg-12 override-col-margin">
+				<table style="width: 60%">
+					<tr>
+						<td class="questionoptioncommon"><label>Video description </label></td>
+					</tr>
+					<tr>
+						<td><input type="text" data-toggle="tooltip" customtooltip
+							data-placement="top" title="Enter logo" ng-model="video.description"
+							name="description" id="description" class="form-control " placeholder="description"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<div style="margin: 20px;"
+		class="col-xs-12 col-sm-12 col-md-12 override-col-top  override-col-margin">
+		<a href="" value="Send" ng-click="submitDiscussionVideo(VideoForm,data._id)"
+		class="btn btn-primary btn-lg pull-left ">Submit Data</a>
+
+	</div>
+</form>
+
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+

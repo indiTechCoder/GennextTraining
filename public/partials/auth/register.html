@@ -1,0 +1,89 @@
+
+<section class="section" ng-controller="authController">
+	<div class="container">
+
+		<div class="title-subtitle-block">
+			<h2 class="title">Create your account.</h2>
+		</div>
+		<div class="narrow-form-holder sign-form-holder">
+			<div class="colored-box grey">
+
+				<form class="form" novalidate role="form" name="registerform"
+					ng-submit="register(registerform)"
+					ng-class="{ 'submitted' : registersubmitted === true}"
+					accept-charset="UTF-8" id="login-nav">
+					<div style="display: none">
+						<input name="utf8" type="hidden" value="✓"><input
+							name="authenticity_token" type="hidden"
+							value="EN12IZbqR/y8LjZjenJfIUeUjE2THTyKQAtp7cEM2wI=">
+					</div>
+
+
+					<input type="text" name="prevent_autofill" id="prevent_autofill"
+						value="" style="display: none;"> <input type="password"
+						name="password_fake" id="password_fake" value=""
+						style="display: none;">
+					<div class="form-group string required user_first_name">
+						<label class="string required control-label" for="user_first_name"><abbr
+							title="required">*</abbr> First name</label><input type="text"
+							ng-model="user.firstname" class="form-control" id="lastname"
+							name="lastname" placeholder="Last Name" required> <span
+							class=" label label-danger"
+							data-ng-show="registersubmitted  && registerform.lastname.$error.required">Please
+							enter Name !</span>
+					</div>
+					<div class="form-group email required user_email">
+						<label class="email required control-label" for="user_email"><abbr
+							title="required">*</abbr> Email</label><input type="email"
+							ng-model="user.email" class="form-control" id="email"
+							name="email" placeholder="Email address" required> <span
+							class=" label label-danger"
+							data-ng-show="registersubmitted  && registerform.email.$error.required">Please
+							enter Email !</span> <span class=" label label-danger"
+							data-ng-show="registersubmitted  && registerform.email.$error.email">Please
+							enter valid Email !</span>
+						<div class="form-group password required user_password">
+							<label class="password required control-label"
+								for="user_password"><abbr title="required">*</abbr>
+								Password</label><input type="password" ng-model="user.password"
+								class="form-control" id="password" name="password"
+								placeholder="Password" required> <span
+								class=" label label-danger"
+								data-ng-show="registersubmitted  && registerform.password.$error.required">Please
+								enter password !</span>
+
+						</div>
+						<div class="form-group boolean optional user_can_contact">
+							<input name="user[can_contact]" type="hidden" value="0"><label
+								class="boolean optional control-label checkbox"
+								for="user_can_contact"><input checked="checked"
+								class="boolean optional checkbox custom-checkbox"
+								id="user_can_contact" name="user[can_contact]" type="checkbox"
+								value="1">receive updates and news from genNext No spam,
+								unsubscribe anytime.</label>
+						</div>
+						<div class="form-group boolean optional bg bg-success">
+							{{registerMessage}}</label>
+						</div>
+						<div class="form-group flexbox-between">
+							<input
+								class="btn btn custom-btn custom-btn-secondary custom-btn-blue"
+								name="commit" type="submit" value="Sign Up">
+
+						</div>
+						<br>
+						<div class="form-group text-center">
+							Have an account? <a class="underlined action" href="#!/login">Sign
+								in</a>
+						</div>
+						<div class="form-group text-center">
+							Forgot your password? <a class="underlined action"
+								href="#!/password">Recover it</a>
+						</div>
+				</form>
+			</div>
+		</div>
+
+
+	</div>
+</section>

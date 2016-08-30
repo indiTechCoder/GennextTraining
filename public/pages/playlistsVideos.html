@@ -1,0 +1,191 @@
+
+<div ng-controller="PlayListController as Ctrl"
+	ng-init="Ctrl.filterYouTubeData()">
+<section class="hero" >
+	<div class="container">
+
+		<h1 class="title">{{Ctrl.filteredData[0].Title}}</h1>
+		<div class="subtitle">
+			<p>{{Ctrl.filteredData[0].ShortDescription}}</p>
+			<p>
+				Just starting out? <strong></strong>
+			</p>
+		</div>
+		<br> <a id="hero-signup" href="/pricing"
+			class="custom-btn custom-btn-red custom-btn-primary get-pro">Free
+			Access for learning <br> <small><i>click for YouTube
+					Videos</i></small>
+		</a>
+
+	</div>
+	<!-- container -->
+</section>
+
+
+<section class="section section-browse-all-lessons">
+	<div class="container">
+		<div class="title-subtitle-block">
+			<h2 class="title">Browse all
+				{{discussionwithVideos.technologyname}} lessons.</h2>
+			<p class="subtitle">
+				<i>showing All series lessons...</i>
+			</p>
+		</div>
+		<!-- title-subtitle-block -->
+
+
+
+
+		<div class="browse-all-lessons-holder">
+			<div class="tool-bar">
+				<ul class="list-unstyled list-inline actions-list">
+
+					<li><small><a class="filter-trigger active" href="#">Latest
+								first</a></small></li>
+					<li><small><a class="filter-trigger"
+							href="/technologies/node?order=ASC">Oldest first</a></small></li>
+
+
+
+				</ul>
+				<!-- actions-list -->
+
+				<div class="btn-group view-switchers-holder">
+					<a id="select-list" role="tab" data-toggle="tab"
+						class="btn btn-default btn-view-switcher active"> <i
+						class="icon icon-list-ol"></i>
+					</a> <a id="select-thumbs" role="tab" data-toggle="tab"
+						class="btn btn-default btn-view-switcher"> <i
+						class="icon icon-th"></i>
+					</a>
+				</div>
+				<!-- view-switchers-holder -->
+			</div>
+			<!-- tool-bar -->
+
+			<div class="tab-content view-tabs-holder">
+				<div class="tab-pane tab-view-list active" id="lesson-list">
+					<div class="series-lessons-holder"">
+						<div class="table-responsive">
+							<table class="table table-condensed">
+								<tbody>
+									<tr
+										ng-repeat="data in discussionwithVideos.videos  track by $index"
+										id="lesson-row-207" class="lesson-row ">
+										<td class="cell cell-pseudo-checkbox">
+											<div class="pseudo-checkbox-holder">
+												<input type="checkbox">
+											</div>
+
+										</td>
+										<td class="cell cell-category-logo"><a href=""> <img
+												alt="Angular" class="category-logo" src="img/angular.png">
+										</a></td>
+										<td class="cell cell-lesson-title">
+											<h4 class="title">
+												{{applicationDataOneTech.technologyname}} <a
+													href="#/all/{{data.technology}}/{{data.link}}">{{data.description}}</a>
+
+											</h4>
+										</td>
+										<td class="cell cell-lesson-category hidden-xs hidden-sm">
+											<div class="info-line">
+												<small class="folder"><i
+													class="icon-folder-open-alt"></i> <a
+													href="#/all/{{data.technology}}/{{data.course_id}}">{{data.technology}}</a>
+												</small>
+											</div>
+										</td>
+
+										<td class="cell cell-duration hidden-xs hidden-sm">
+											<div class="info-line">
+												<small class="duration"><i class="icon-time"></i>
+													2:05</small>
+											</div>
+										</td>
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<!-- tab-view-tiles -->
+
+					<div class="pagination-holder text-center">
+						<ul class="pagination pagination">
+							<li class="prev disabled"><span>Previous</span></li>
+							<li class="active"><span>1</span></li>
+							<li><a rel="next"
+								href="/technologies/node?order=desc&amp;page=2">2</a></li>
+							<li><a href="/technologies/node?order=desc&amp;page=3">3</a></li>
+							<li class="next"><a rel="next"
+								href="/technologies/node?order=desc&amp;page=2">Next </a></li>
+						</ul>
+					</div>
+					<!-- pagination-holder -->
+				</div>
+				<!-- view-tabs-holder -->
+
+			</div>
+			<!-- browse-all-lessons-holder -->
+
+
+
+		</div>
+		<!-- container -->
+</section>
+<section class="section section-lesson ng-scope">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-8 part-left">
+				<div class="lesson-description-holder">
+					<h3 class="ng-binding">{{discussionwithVideos.shortDescription}}</h3>
+					<div class="info-line">
+						<small class="duration"><i class="icon-time"></i> 2:05</small> <small
+							class="folder"><i class="icon-folder-open-alt"></i> <a
+							class="underlined ng-binding" href="">angular</a></small> <small>
+							lesson by <a class="underlined" href="/instructors/aaron-frost"
+							rel="author">Tarun Sharma</a>
+						</small>
+
+					</div>
+					<div>
+						<p class="ng-binding">{{Ctrl.filteredData[0].ShortDescription}}</p>
+
+					</div>
+					<div class="share-lesson-holder"></div>
+					<!-- share-lesson-holder -->
+				</div>
+				<!-- lesson-description-holder -->
+
+			</div>
+			<!-- part-left -->
+
+			<div class="col-sm-12 col-md-4 part-right">
+
+				<!-- Featured Series -->
+				<div class="explore-series-holder">
+					<p>
+						<i>Featured series:</i>
+					</p>
+
+					<h4>
+						<a href="" class="ng-binding">{{Ctrl.filteredData[0].Title}}</a>
+					</h4>
+					<a href=""><img class="img-responsive"
+							ng-src="{{Ctrl.filteredData[0].Thumbnails[0].FullURL}}" alt=""></a>
+
+				</div>
+				<!-- explore-series-holder -->
+				<br>
+
+
+
+
+			</div>
+		</div>
+		<!-- part-right -->
+	</div>
+</section>
+</div>

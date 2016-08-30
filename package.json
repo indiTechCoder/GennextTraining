@@ -1,0 +1,46 @@
+{
+    "name": "TourNFood",
+    "version": "0.0.0",
+    "description": "TourNFood",
+    "main": "server.js",
+    "engines": {
+    "node": "4.1.1"
+    },
+    "scripts": {
+    "start": "node app.js"
+       },
+    "author": {
+        "name": "TKS",
+        "email": ""
+        },
+            "dependencies": {
+                "body-parser": "^1.15.0",
+                "cookie-parser": "^1.4.1",
+                "crypto": "^0.0.3",
+                "errorhandler": "^1.4.3",
+                "compression": "^1.6.1",
+                "ejs": "^2.4.1",
+                "express": "^4.13.4",
+                "express-logger": "^0.0.3",
+                "express-session": "^1.13.0",
+                "method-override": "^2.3.5",
+                "jwt-simple": "^0.4.1",
+                "multer": "^1.1.0",
+                "node-uuid": "^1.4.7",
+                "nodemailer" : "^2.2.1",
+                "mongoose": "^4.4.5",
+                "mongoose-deep-populate": "^2.0.3",
+                "morgan": "^1.7.0",
+                "passport": "^0.3.2",
+                "passport-local": "^1.0.0",
+                "passport-google-oauth": "^1.0.0",
+                "passport-http-bearer": "^1.0.1",
+                "passport-facebook": "^2.1.0",
+                "passport-local-mongoose": "^4.0.0",
+                "path": "^0.12.7",
+                "urlencode": "^1.1.0",
+                "mime": "^1.3.4",
+                "aws-sdk": "^2.2.45",
+                "busboy" : "^0.2.12"
+            }
+        }

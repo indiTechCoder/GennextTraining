@@ -1,0 +1,147 @@
+
+<div class="container-fluid  ng-scope">
+	<div class="feedback-questions">
+		<div
+			class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+			<div class="col-md-12 col-sm-12 col-xs-12  override-col-margin">
+				<div
+					class="col-xs-12 col-sm-12  col-md-12 col-lg-12 override-col-margin">
+					<table style="width:60%">
+						<tr>
+							<td class="questionoptioncommon"><label>Training ID </label></td>
+						</tr>
+						<tr>
+							<td><input required
+								class="form-control override-form-control"
+								data-toggle="tooltip" customtooltip data-placement="top"
+								ng-model="training.id" type="text"
+								 name="id" placeholder="Id"></input></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<div class="col-md-12 col-sm-12 col-xs-12  override-col-margin">
+				<div
+					class="col-xs-12 col-sm-12  col-md-12 col-lg-12 override-col-margin">
+					<table style="width:60%">
+						<tr>
+							<td class="questionoptioncommon"><label>Technology Type </label></td>
+						</tr>
+						<tr>
+							<td><select required
+							name="technologytype" ng-model="training.technologytype"
+								class="form-control override-form-control"
+								data-toggle="tooltip">
+                                <option value="java">java</option>
+                                <option value="mobile">mobile</option>
+                                <option value="web">web</option>
+								</select></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div
+			class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+			<div class="col-md-12 col-sm-12 col-xs-12  override-col-margin">
+				<div
+					class="col-xs-12 col-sm-12  col-md-12 col-lg-12 override-col-margin">
+					<table style="width:60%">
+						<tr>
+							<td class="questionoptioncommon"><label>Technology Name  </label></td>
+						</tr>
+						<tr>
+							<td><input type="text" data-toggle="tooltip"
+								data-placement="top" title="Enter Technology Name"
+								ng-model="training.technologyname" name="technologyname" id="technologyname" class="form-control "
+								placeholder="Technology Name"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div
+			class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+			<div class="col-md-12 col-sm-12 col-xs-12  override-col-margin">
+				<div
+					class="col-xs-12 col-sm-12  col-md-12 col-lg-12 override-col-margin">
+					<table style="width:60%">
+						<tr>
+							<td class="questionoptioncommon"><label>Logo </label></td>
+						</tr>
+						<tr>
+							<td><input type="text" data-toggle="tooltip" customtooltip
+								data-placement="top" title="Enter logo"
+								ng-model="training.logo" name="logo" id="logo" class="form-control "
+								placeholder="logo"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
+
+<div
+			class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+		<div
+			class="col-xs-12 col-sm-12 col-md-12 override-col-top  override-col-margin ">
+			<div
+				class="col-xs-12 col-sm-12 col-md-6 override-col-top  override-col-margin ">
+				<table style="width:100%">
+					<tr>
+						<td class="questionoptioncommon"><label>New Training : Short Description</label></td>
+					</tr>
+					<tr>
+						<td><textarea required
+								class="form-control " data-toggle="tooltip" customtooltip
+								data-placement="top" title="New Training : Short Description"
+								ng-model="training.shortdescription" name="shortdescription"
+								placeholder="New Training : Short Description"></textarea></td>
+					</tr>
+				</table>
+			</div>
+
+		</div>
+		</div>
+		<div
+			class="col-md-12 col-sm-12 col-xs-12 override-col-top override-col-margin">
+		<div
+			class="col-xs-12 col-sm-12 col-md-12 override-col-top  override-col-margin ">
+			<div
+				class="col-xs-12 col-sm-12 col-md-6 override-col-top  override-col-margin ">
+				<table style="width:100%">
+					<tr>
+						<td class="questionoptioncommon"><label>New Training : Long Description </label></td>
+					</tr>
+					<tr>
+						<td><textarea required
+								class="form-control " data-toggle="tooltip" customtooltip
+								data-placement="top"
+								title="New Training : Long Description" name="longdescription"
+								ng-model="training.longdescription"
+								placeholder="New Training : Long Description"></textarea></td>
+					</tr>
+				</table>
+			</div>
+
+		</div>
+		</div>
+
+
+		<div style="margin: 20px;"
+			class="col-xs-12 col-sm-12 col-md-12 override-col-top  override-col-margin"
+			>
+			<input type="submit" value="Send" class="btn btn-primary btn-lg pull-left ">
+
+		</div>
+	</div>
+
+
+</div>
+
+

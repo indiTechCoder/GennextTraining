@@ -1,0 +1,76 @@
+<div ng-controller="YouTubeController as Ctrl"
+	ng-init="Ctrl.filterYouTubeData()">
+	<section class="hero-technology">
+		<div class="container">
+			<div class="title-holder">
+				<div class="tech-logo-holder">
+					<img alt="Angular2" class="tech-logo"
+						ng-src="{{Ctrl.filteredData[0].Thumbnails[0].FullURL}}">
+					<h3 class="tech-title">{{Ctrl.filteredData[0].Title}}</h3>
+				</div>
+				<div class="slogan-holder">
+					<h3 class="slogan"></h3>
+				</div>
+			</div>
+			<div bind-html-compile="Ctrl.filteredData[0].Description"></div>
+		</div>
+	</section>
+	<section class="section">
+		<div class="container">
+			<h3 class="text-center">YouTube training Videos.</h3>
+			<div class="lesson-without-playlist-holder">
+				<div class="lessons-frame-holder">
+					<div class="lessons-frame ">
+						<section class="section text-center">
+							<div class="container videoWrapper">
+								<iframe height="600px" width="1100px"
+									ng-src="{{Ctrl.tubeurl | trusted}}" frameborder="0"
+									allowfullscreen="" src="{{Ctrl.tubeurl | trusted}}"></iframe>
+							</div>
+						</section>
+					</div>
+				</div>
+				<!-- lessons-frame-holder -->
+			</div>
+		</div>
+		<!-- container -->
+	</section>
+	<section class="section section-lesson ng-scope">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-8 part-left">
+					<div class="lesson-description-holder">
+						<div>
+							<div bind-html-compile="Ctrl.filteredData[0].ShortDescription"></div>
+							<div class="info-line">
+								<small class="duration"><i class="icon-time"></i> 2:05</small> <small
+									class="folder"><i class="icon-folder-open-alt"></i> <a
+									class="underlined ng-binding" href="">{{TrainingData.technologyname}}</a></small>
+								<small> lesson by <a class="underlined"
+									href="/instructors/aaron-frost" rel="author">Tarun Sharma</a>
+								</small>
+							</div>
+						</div>
+						<div class="share-lesson-holder"></div>
+						<!-- share-lesson-holder -->
+					</div>
+					<!-- lesson-description-holder -->
+				</div>
+				<!-- part-left -->
+				<div class="col-sm-12 col-md-4 part-right">
+					<!-- Featured Series -->
+					<div class="explore-series-holder">
+						<p>
+							<i>{{Ctrl.filteredData[0].Title}}</i>
+						</p>
+						<a href=""><img class="img-responsive"
+							ng-src="{{Ctrl.filteredData[0].Thumbnails[0].FullURL}}" alt=""></a>
+					</div>
+					<!-- explore-series-holder -->
+					<br>
+				</div>
+			</div>
+			<!-- part-right -->
+		</div>
+	</section>
+</div>

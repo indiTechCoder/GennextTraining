@@ -1,0 +1,33 @@
+<div data-ui-view>
+    <section class="section">
+        <div class="container">
+            <div class="title-subtitle-block">
+                <h2 class="title">Screencast on Angular 2.0/React and Front and framework ..</h2>
+            </div>
+
+            <div class="row block-lessons-series">
+            <div class="col-sm-6 item" ng-repeat="data in applicationScreenCastData">
+                    <a href="#!/playlists/videos/{{data.ID}}" >
+                        <div class="media-holder">
+                            <img ng-src="{{data.Thumbnails[0].FullURL | trusted}}" class="img-responsive img-admin-tech-logo">
+                        </div>
+                    </a>
+                    <div class="media-subscription-holder">
+                        <div class="media">
+                            <h3 class="title"><a href="#!/playlists/videos/{{data.ID}}"><p>{{data.Title}}</p>
+                            </a></h3>
+                        </div>
+                        <small class="description"><p>{{data.ShortDescription | strLimit: 300}}</p>
+                        </small>
+                        <div class="info-line"><small class="folder"><i class="icon-play-circle"><a href="#!/playlists/videos/{{data.ID}}"> Watch Now with detailed sessions </a></i></small></div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </section>
+
+</div>

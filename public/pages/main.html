@@ -1,0 +1,64 @@
+
+<section class="hero">
+    <div class="container">
+
+        <div class="logo-holder">
+            <a href="#!/web"><img alt="Tech logo angular"
+                src="img/angular.svg"></a> <a href="#!/web"><img alt="React"
+                src="img/react.svg"></a> <a href="#!/web"><img alt="Js"
+                src="img/javascript.svg"></a> <a href="#!/web"><img
+                alt="Tech logo d3" src="img/d3.svg"></a> <a href="#!/web"><img
+                alt="Es6" src="img/jss.svg"></a>
+        </div>
+
+        <h1 class="mega title">GenNext Training to deliver project based
+            learning to give you the head start you need as a developer</h1>
+
+        <p class="subtitle">Level up your programming skills today with
+            condensed video lessons on industry leading web frameworks and tools!</p>
+        <a id="signup" href="#!/all"
+            class="custom-btn custom-btn-red custom-btn-primary">Unlock the
+            Knowledge <br> <small><i>click here to start</i></small>
+        </a>
+    </div>
+    <!-- container -->
+
+
+</section>
+
+
+<section class="section">
+    <div class="container">
+        <div class="row block-lessons-series">
+            <div ng-repeat="data in applicationYouTubeData" class="col-sm-6 item">
+                <div class="media-holder">
+                    <a href=""> <img ng-src="{{data.Thumbnails[0].FullURL}}"
+                        class="img-responsive">
+                    </a>
+                </div>
+                <!-- media-holder -->
+
+                <div class="media-subscription-holder">
+                    <h3 class="title">
+                        <p>{{data.Title}}</p>
+                    </h3>
+
+                    <div class="info-line">
+                        <small class="folder"> <i class="icon-folder-open-alt"></i>
+                            <a href=" #!/youtube/{{data.ID}}">watch Training Videos On YouTube</a>
+                        </small>
+                    </div>
+                    <!-- info-line -->
+                </div>
+                <!-- media-subscription-holder -->
+            </div>
+
+
+
+
+        </div>
+
+
+    </div>
+
+</section>

@@ -1,0 +1,81 @@
+
+
+<section class="hero ng-scope" ng-controller="Maincontroller">
+	<div class="container">
+		<h1 class="title ng-binding">{{YouTubeData.description}} </h1>
+		<div class="subtitle"><p>{{TrainingData.technologyname}} Series</p></div>
+		<div class="lesson-without-playlist-holder">
+			<div class="lessons-frame-holder">
+				<div class=" lessons-frame ">
+					<section class="section text-center">
+						<div class="container videoWrapper">
+							<iframe height="600px" width="1100px" ng-src="{{YouTubeData.link | trusted}}" frameborder="0" allowfullscreen="" src="{{YouTubeData.link | trusted}}"></iframe>
+						</div>
+					</section>
+				</div>
+			</div>
+			<!-- lessons-frame-holder -->
+		</div>
+
+
+
+	</div>
+	<!-- container -->
+</section>
+<section class="section section-lesson ng-scope">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-8 part-left">
+				<div class="lesson-description-holder">
+
+
+					<h3 class="ng-binding">{{YouTubeData.shortdescription}}</h3>
+
+
+
+					<div class="info-line">
+						<small class="duration"><i class="icon-time"></i> 2:05</small> <small class="folder"><i class="icon-folder-open-alt"></i> <a class="underlined ng-binding" href="">{{TrainingData.technologyname}}</a></small> <small>
+						lesson by <a class="underlined" href="/instructors/aaron-frost" rel="author">Tarun Sharma</a>
+					</small>
+
+				</div>
+
+
+				<div>
+					<p class="ng-binding">{{TrainingData.longdescription}}</p>
+
+				</div>
+
+
+				<div class="share-lesson-holder"></div>
+				<!-- share-lesson-holder -->
+			</div>
+			<!-- lesson-description-holder -->
+
+		</div>
+		<!-- part-left -->
+
+		<div class="col-sm-12 col-md-4 part-right">
+
+			<!-- Featured Series -->
+			<div class="explore-series-holder">
+				<p>
+					<i>Featured series:</i>
+				</p>
+
+				<h4><a href="" class="ng-binding">{{YouTubeData.description}}</a>
+				</h4>
+				<a href=""><img class="img-responsive" ng-src="img/{{TrainingData.technologyname}}.jpg" alt="{{TrainingData.description}}"></a>
+
+			</div>
+			<!-- explore-series-holder -->
+			<br>
+
+
+
+
+		</div>
+	</div>
+	<!-- part-right -->
+</div>
+</section>
