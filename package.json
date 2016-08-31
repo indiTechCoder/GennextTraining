@@ -1,46 +1,74 @@
 {
-    "name": "TourNFood",
-    "version": "0.0.0",
-    "description": "TourNFood",
-    "main": "server.js",
-    "engines": {
-    "node": "4.1.1"
-    },
-    "scripts": {
-    "start": "node app.js"
-       },
-    "author": {
-        "name": "TKS",
-        "email": ""
-        },
-            "dependencies": {
-                "body-parser": "^1.15.0",
-                "cookie-parser": "^1.4.1",
-                "crypto": "^0.0.3",
-                "errorhandler": "^1.4.3",
-                "compression": "^1.6.1",
-                "ejs": "^2.4.1",
-                "express": "^4.13.4",
-                "express-logger": "^0.0.3",
-                "express-session": "^1.13.0",
-                "method-override": "^2.3.5",
-                "jwt-simple": "^0.4.1",
-                "multer": "^1.1.0",
-                "node-uuid": "^1.4.7",
-                "nodemailer" : "^2.2.1",
-                "mongoose": "^4.4.5",
-                "mongoose-deep-populate": "^2.0.3",
-                "morgan": "^1.7.0",
-                "passport": "^0.3.2",
-                "passport-local": "^1.0.0",
-                "passport-google-oauth": "^1.0.0",
-                "passport-http-bearer": "^1.0.1",
-                "passport-facebook": "^2.1.0",
-                "passport-local-mongoose": "^4.0.0",
-                "path": "^0.12.7",
-                "urlencode": "^1.1.0",
-                "mime": "^1.3.4",
-                "aws-sdk": "^2.2.45",
-                "busboy" : "^0.2.12"
-            }
-        }
+  "name": "webpack-hmr-express",
+  "version": "1.0.0",
+  "description": "Webpack HMR with Express",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "serve-favicon": "^2.3.0"
+},
+"devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
+    "css-loader": "^0.23.1",
+    "node-sass": "^3.8.0",
+    "react-hot-loader": "^1.3.0",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.12.2",
+    "body-parser": "^1.15.0",
+    "cookie-parser": "^1.4.1",
+    "crypto": "^0.0.3",
+    "errorhandler": "^1.4.3",
+    "compression": "^1.6.1",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "express-logger": "^0.0.3",
+    "express-session": "^1.13.0",
+    "method-override": "^2.3.5",
+    "jwt-simple": "^0.4.1",
+    "multer": "^1.1.0",
+    "node-uuid": "^1.4.7",
+    "nodemailer" : "^2.2.1",
+    "mongoose": "^4.4.5",
+    "mongoose-deep-populate": "^2.0.3",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-google-oauth": "^1.0.0",
+    "passport-http-bearer": "^1.0.1",
+    "passport-facebook": "^2.1.0",
+    "passport-local-mongoose": "^4.0.0",
+    "path": "^0.12.7",
+    "urlencode": "^1.1.0",
+    "mime": "^1.3.4",
+    "aws-sdk": "^2.2.45",
+    "busboy" : "^0.2.12"
+},
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node server.js"
+},
+"repository": {
+    "type": "git",
+    "url": "git+https://github.com/bginbey/webpack-hmr-express.git"
+},
+"author": "Beau Ginbey",
+"license": "ISC",
+"bugs": {
+    "url": "https://github.com/bginbey/webpack-hmr-express/issues"
+},
+"homepage": "https://github.com/bginbey/webpack-hmr-express#readme"
+}
+
+
+
+
