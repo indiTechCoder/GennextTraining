@@ -1,18 +1,24 @@
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
 var path = require('path');
-var express = require('express');
 var webpack = require('webpack');
 var webpackMiddleware = require('webpack-dev-middleware');
 var webpackHotMiddleware = require('webpack-hot-middleware');
 var favicon = require('serve-favicon');
+var mongoose = require('./config/mongoose.js'),
+    express = require('./config/express.js'),
+    passport = require('./config/passport.js'),
+    config = require('./config/config.js');
 
-var app = express();
+var db = mongoose(),
+    app = express(),
+    passport = passport();
 
-var config = require('./webpack.config.js');
-var compiler = webpack(config);
+var webpackconfig = require('./webpack.config.js');
+var compiler = webpack(webpackconfig);
 
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(webpackMiddleware(compiler, {
-  publicPath: config.output.publicPath
+  publicPath: webpackconfig.output.publicPath
 }));
 app.use(webpackHotMiddleware(compiler, {
   log: console.log,
