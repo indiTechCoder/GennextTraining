@@ -18,14 +18,12 @@ var webpackconfig = require('./webpack.config.js');
 var compiler = webpack(webpackconfig);
 
 app.use(webpackMiddleware(compiler, {
-  publicPath: webpackconfig.output.publicPath
+    publicPath: webpackconfig.output.publicPath
 }));
 app.use(webpackHotMiddleware(compiler, {
-  log: console.log,
-  path: '/__webpack_hmr', heartbeat: 10 * 1000
+    log: console.log,
+    path: '/__webpack_hmr',
+    heartbeat: 10 * 1000
 }));
-app.get('/', function response(req, res) {
-  res.sendFile(path.join(__dirname, 'app/views/index.html'));
-});
 
 app.listen(3000);
