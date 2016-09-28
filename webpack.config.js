@@ -5,7 +5,7 @@ var config = {
     entry: [
         'webpack-hot-middleware/client?http://localhost:3000',
         'webpack/hot/only-dev-server',
-        './client/app/index'
+        './client/index'
     ],
     output: {
         path: __dirname + '/client',
