@@ -19,10 +19,15 @@ var compiler = webpack(webpackconfig);
 app.use(webpackMiddleware(compiler, {
     publicPath: webpackconfig.output.publicPath
 }));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client/index.html'));
+});
+
 app.use(webpackHotMiddleware(compiler, {
     log: console.log,
     path: '/__webpack_hmr',
-    heartbeat: 10 * 1000
+    heartbeat: 10 * 10
 }));
 
 app.listen(3000);

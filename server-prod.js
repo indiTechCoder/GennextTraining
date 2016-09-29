@@ -1,4 +1,3 @@
-
 var path = require('path');
 var favicon = require('serve-favicon');
 var mongoose = require('./config/mongoose.js'),
