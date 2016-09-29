@@ -5,8 +5,8 @@
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
     session = require('express-session'),
-    passport = require('passport')
-crypto = require('crypto');
+    passport = require('passport'),
+    crypto = require('crypto');
 
 module.exports = function() {
     var app = express();

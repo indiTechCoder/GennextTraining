@@ -23,13 +23,5 @@
         pass : 'alacarte2015'
     },
     mailconfirmationurl : "http://ec2-52-36-27-59.us-west-2.compute.amazonaws.com:5000/mail/confirmation/token/",
-    mailpassreseturl : "http://ec2-52-36-27-59.us-west-2.compute.amazonaws.com:5000/#!/passwordreset/",
-    useS3 : false,
-    awsConfig : {
-        region : 'us-west-2',
-        accessKeyId : 'AKIAJ7YCJG2RFA7724AQ',
-        secretAccessKey : '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',
-        bucket : 'elasticbeanstalk-us-west-2-451112350788',
-        ACL : 'public-read'
-    }
+    mailpassreseturl : "http://ec2-52-36-27-59.us-west-2.compute.amazonaws.com:5000/#!/passwordreset/"
 }
