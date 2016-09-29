@@ -124,7 +124,7 @@
             "start": "node server --colors",
             "test": "npm run lint && npm run mocha && npm run karma",
             "test:watch": "npm run mocha:watch & npm run karma:watch",
-            "mocha": "mocha --compilers js:babel-core/register client/app --recursive",
+            "mocha": "mocha --compilers js:babel-core/register test/ --recursive",
             "mocha:watch": "npm run mocha -- --watch",
             "karma": "NODE_ENV=production karma start karma.config.js",
             "karma:watch": "npm run karma -- --watch"
