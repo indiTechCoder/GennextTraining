@@ -6,15 +6,18 @@
     methodOverride = require('method-override'),
     session = require('express-session'),
     passport = require('passport'),
-    crypto = require('crypto');
+    crypto = require('crypto'),
+    ERROR = require('./error');
 
 module.exports = function() {
     var app = express();
 
     if (process.env.NODE_ENV === 'development') {
         app.use(morgan('dev'));
+        app.set('env', 'development');
     } else if (process.env.NODE_ENV === 'production') {
         app.use(compress());
+        app.set('env', 'production');
     }
 
     app.use(bodyParser.urlencoded({
@@ -39,6 +42,24 @@ module.exports = function() {
 
     require('../app/routes/user.server.routes')(app);
     require('../app/routes/training.server.routes')(app);
+    // will print stacktrace
+    if (app.get('env') === 'development') {
+        app.use(function(err, req, res, next) {
+            var e = new Error(500);
+            e.status = err.status || 500;
+            return ERROR(e, req, res);
+        });
+    }
+
+    // production error handler
+    // no stacktraces leaked to user
+    if (app.get('env') === 'production') {
+        app.use(function(err, req, res, next) {
+            var e = new Error(500);
+            e.status = err.status || 500;
+            return ERROR(e, req, res);
+        });
+    }
 
     app.use(express.static('./public'));
     return app;
