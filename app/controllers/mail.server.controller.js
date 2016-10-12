@@ -2,17 +2,6 @@
     Mails = mongoose.model('Mail')
     Users = mongoose.model('User');
 
-var getErrorMessage = function (err) {
-    if (err.errors) {
-        for (var errorName in err.errors) {
-            if (err.errors[errorName].message) {
-                return err.errors[errorName].message;
-            }
-        }
-    } else {
-        return 'Unknown Server Error';
-    }
-}
 var mailController = function () { };
 
 mailController.prototype.compose = function (req,res){
