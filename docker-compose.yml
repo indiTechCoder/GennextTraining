@@ -1,0 +1,37 @@
+# Run docker-compose build
+# Run docker-compose up
+# Live long and prosper
+# docker command to Run
+#  Open another command window and navigate to this application's root folder in the command window
+#  Run `docker-compose build` to build the images
+#  Run `docker-compose up` to run the containers
+version: '2'
+
+services:
+
+  node:
+    container_name: nodeapp
+    image: nodeapp
+    build:
+      context: .
+      dockerfile: ./dockerfile
+    volumes:
+      - .:/var/www/gennextexpress
+    environment:
+      - NODE_ENV=development
+    ports:
+      - "3000:3000"
+    networks:
+      - nodeapp-network
+      
+  #No authentication is provided here - just a demo! Read the Dockerfile
+  #for more information about adding authentication.
+  mongodb:
+    container_name: mongodb
+    image: mongo
+    networks:
+      - nodeapp-network
+
+networks:
+  nodeapp-network:
+    driver: bridge

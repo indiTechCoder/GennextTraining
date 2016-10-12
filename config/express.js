@@ -1,66 +1,67 @@
 ﻿var config = require('./config.js'),
-express = require('express'),
-morgan = require('morgan'),
-compress = require('compression'),
-bodyParser = require('body-parser'),
-methodOverride = require('method-override'),
-session = require('express-session'),
-passport = require('passport')
-multer = require('multer'),
-mime = require('mime')
-crypto = require('crypto')
-;
+    express = require('express'),
+    morgan = require('morgan'),
+    compress = require('compression'),
+    bodyParser = require('body-parser'),
+    methodOverride = require('method-override'),
+    session = require('express-session'),
+    passport = require('passport'),
+    crypto = require('crypto'),
+    ERROR = require('./error');
 
-module.exports = function (){
-	var app = express();
+module.exports = function() {
+    var app = express();
 
-	if (process.env.NODE_ENV === 'development') {
-		app.use(morgan('dev'));
-	} else if (process.env.NODE_ENV === 'production') {
-		app.use(compress());
-	}
+    if (process.env.NODE_ENV === 'development') {
+        app.use(morgan('dev'));
+        app.set('env', 'development');
+    } else if (process.env.NODE_ENV === 'production') {
+        app.use(compress());
+        app.set('env', 'production');
+    }
 
-	app.use(bodyParser.urlencoded({
-		extended : true
-	}));
+    app.use(bodyParser.urlencoded({
+        extended: true
+    }));
 
-	app.use(bodyParser.json());
+    app.use(bodyParser.json());
 
-	app.use(methodOverride());
+    app.use(methodOverride());
 
-	app.use(session({
-		saveUninitialized : true,
-		resave : true,
-		secret : config.sessionSecret
-	}));
+    app.use(session({
+        saveUninitialized: true,
+        resave: true,
+        secret: config.sessionSecret
+    }));
 
-	app.set('views', './app/views');
-	app.set('view engine', 'ejs');
+    app.set('views', 'client');
+    app.set('view engine', 'ejs');
 
-	app.use(passport.initialize());
-	app.use(passport.session());
+    app.use(passport.initialize());
+    app.use(passport.session());
 
+    require('../app/routes/user.server.routes')(app);
+    require('../app/routes/training.server.routes')(app);
+    // will print stacktrace
+    if (app.get('env') === 'development') {
+        app.use(function(err, req, res, next) {
+            var e = new Error(500);
+            e.status = err.status || 500;
+            return ERROR(e, req, res);
+        });
+    }
 
-	var storage = multer.diskStorage({
-		destination: function (req, file, cb) {
-			cb(null, './public/uploads/')
-		},
-		filename: function (req, file, cb) {
-			crypto.pseudoRandomBytes(16, function (err, raw) {
-				cb(null, raw.toString('hex') + Date.now() + '.' + mime.extension(file.mimetype));
-			});
-		}
-	});
-	var upload = multer({ storage: storage });
+    // production error handler
+    // no stacktraces leaked to user
+    if (app.get('env') === 'production') {
+        app.use(function(err, req, res, next) {
+            var e = new Error(500);
+            e.status = err.status || 500;
+            return ERROR(e, req, res);
+        });
+    }
 
-	if(!config.useS3)
-		app.use(upload.single('file'));
-
-	require('../app/routes/user.server.routes')(app);
-	require('../app/routes/index.server.routes')(app);
-	require('../app/routes/training.server.routes')(app);
-
-	app.use(express.static('./public'));
-	return app;
+    app.use(express.static('./public'));
+    return app;
 
 }
