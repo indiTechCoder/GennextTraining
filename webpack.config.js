@@ -3,6 +3,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 const DEV = process.env.NODE_ENV !== 'production';
 
 const config = {
@@ -26,13 +27,18 @@ const config = {
             }, {
                 test: /\.html/,
                 loader: 'file?name=[name].[ext]'
-            }, {
+            }, //{
+            // test: /\.css$/,
+            // or ?sourceMap&modules&importLoaders=1!postcss-loader
+            // loader: DEV ? 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader' : ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader')
+            // 'style-loader!css-loader?modules&importLoaders=1!postcss-loader'
+            // },
+            {
                 test: /\.css$/,
-                // or ?sourceMap&modules&importLoaders=1!postcss-loader
-                loader: DEV ? 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader' : ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader')
-                    // 'style-loader!css-loader?modules&importLoaders=1!postcss-loader'
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')
             },
             { test: /\.json/, loader: 'json' },
+            { test: /\.css/, loader: 'css!style' },
             { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?mimetype=application/vnd.ms-fontobject' },
             { test: /\.woff(2)?(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff' },
             { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream' },
@@ -45,22 +51,16 @@ const config = {
             template: './client/index.html',
             inject: 'body'
         }),
+        new ExtractTextPlugin('style.css', {
+            allChunks: true
+        }),
         // Without this, Webpack would output styles inside JS - we prefer a separate CSS file
-        new ExtractTextPlugin('styles.css'),
+        //new ExtractTextPlugin('styles.css'),
 
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         })
-    ],
-    postcss: () => {
-        return [
-            require('precss'),
-            require('postcss-advanced-variables')({
-                variables: require('./src/colors')
-            }),
-            require('autoprefixer')({ browsers: ['last 2 versions'] })
-        ];
-    }
+    ]
 };
 
 if (DEV) {

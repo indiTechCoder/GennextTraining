@@ -1,11 +1,16 @@
+/**
+ * Main reducer
+ * Calls the reducers managing parts of the state, and combines them into a single state object. 
+ */
+
 import { combineReducers } from 'redux';
-import UserReducer from './reducer_user';
-import ValidateUserFieldsReducer from './reducer_validateUserFields';
-import { reducer as formReducer } from 'redux-form';
-const rootReducer = combineReducers({
-    user: UserReducer,
-    validateFields: ValidateUserFieldsReducer,
-    form: formReducer // <-- redux-form
-});
+import { routeReducer } from 'redux-simple-router';
+import auth from './auth';
+
+const reducers = { auth };
+
+const rootReducer = combineReducers(Object.assign({}, reducers, {
+    routing: routeReducer
+}));
 
 export default rootReducer;
