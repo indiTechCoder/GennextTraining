@@ -3,17 +3,6 @@
     Users = mongoose.model('User');
 var fs = require('fs');
 //geting Error Message
-var getErrorMessage = function (err) {
-    if (err.errors) {
-        for (var errorName in err.errors) {
-            if (err.errors[errorName].message) {
-                return err.errors[errorName].message;
-            }
-        }
-    } else {
-        return 'Unknown Server Error';
-    }
-}
 
 exports.searchAllEvent = function (req, res, next){
     var Event = Events.find();
