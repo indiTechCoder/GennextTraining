@@ -3,10 +3,10 @@
     Message = mongoose.model('Message');
 
 
-var inboxController = function () { };
+var inboxController = function() {};
 
-inboxController.prototype.list = function (req, res, next) {
-   
+inboxController.prototype.list = function(req, res, next) {
+
 }
 
 module.exports = new inboxController();
