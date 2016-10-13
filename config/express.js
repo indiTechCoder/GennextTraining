@@ -7,7 +7,11 @@
     session = require('express-session'),
     passport = require('passport'),
     crypto = require('crypto'),
-    ERROR = require('./error');
+    ERROR = require('./error'),
+    compression = require('compression'),
+    log4js = require('log4js');
+
+
 
 module.exports = function() {
     var app = express();
@@ -23,8 +27,11 @@ module.exports = function() {
     app.use(bodyParser.urlencoded({
         extended: true
     }));
-
+    app.use(log4js.connectLogger(log4js.getLogger("http"), { level:  "auto"}));
+    app.use(compression());
+    app.set('view cache', true);
     app.use(bodyParser.json());
+
 
     app.use(methodOverride());
 
