@@ -36,7 +36,7 @@ export function signup(username, password, redirect = '/') {
 
     let user = {}
 
-    user.username =  username;
+    user.username = username;
     user.password = password;
 
     /**

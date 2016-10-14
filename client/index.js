@@ -14,8 +14,6 @@ import NotFound from './containers/NotFound/NotFound'
 
 const history = createHistory();
 
-syncReduxAndRouter(history, store);
-
 render(
 	<Provider store={store}>
 		<Router history={history}>
