@@ -27,7 +27,7 @@ module.exports = function() {
     app.use(bodyParser.urlencoded({
         extended: true
     }));
-    app.use(log4js.connectLogger(log4js.getLogger("http"), { level:  "auto"}));
+    app.use(log4js.connectLogger(log4js.getLogger("http"), { level: "auto" }));
     app.use(compression());
     app.set('view cache', true);
     app.use(bodyParser.json());
